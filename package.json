@@ -1,0 +1,33 @@
+{
+  "name": "learn-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon app.js",
+    "test": "jest",
+    "test-w": "jest --watchAll",
+    "lint": "eslint --fix"
+  },
+  "keywords": [],
+  "author": "Shawon Morshed <shawonallproject@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.3",
+    "supertest": "^4.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.32.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "jest": "^26.4.2",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.3"
+  }
+}
