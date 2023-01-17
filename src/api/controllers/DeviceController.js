@@ -13,8 +13,7 @@ exports.create = async (req, res) => {
     const checkDeviceCount = await DeviceModel.countDocuments({
       Gateway: dataToSave.Gateway,
     });
-    console.log(checkDeviceCount);
-    console.log(typeof checkDeviceCount);
+
     if (checkDeviceCount < 10) {
       const newDevice = await DeviceModel.create(dataToSave);
       res.status(201).json({
@@ -97,11 +96,11 @@ exports.getByGatewayId = async (req, res) => {
 exports.update = async (req, res) => {
   const deviceId = req.params.id;
   if (deviceId) {
+    const dataToSave = req.body;
     const checkGateway = await GatewayModel.findById(dataToSave.Gateway);
     if (checkGateway) {
-      const device = await DeviceModel.findById(gatewayId);
+      const device = await DeviceModel.findById(deviceId);
       if (device) {
-        const dataToSave = req.body;
         await DeviceModel.findOneAndUpdate({ _id: deviceId }, dataToSave, {
           upsert: false,
         });
