@@ -4,8 +4,8 @@ const Schema = mongoose.Schema;
 const GatewaySchema = new Schema(
   {
     SerialNumber: { type: String, required: true, unique: true },
-    Name: { type: String, required: true },
-    IPAddress: { type: String, required: true },
+    Name: { type: String, required: false, default: null },
+    IPV4Address: { type: String, required: true },
   },
   { timestamps: true }
 );
