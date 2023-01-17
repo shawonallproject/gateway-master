@@ -15,6 +15,6 @@ app.use(cors());
  * routes
  * ================================*/
 const routes = require("./src/api/routes");
-app.use("/", routes);
+app.use("/api", routes);
 
 module.exports = app;

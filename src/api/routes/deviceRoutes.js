@@ -1,11 +1,13 @@
 // eslint-disable-next-line new-cap
 const routes = require("express").Router();
 const deviceController = require("../controllers/DeviceController");
+const deviceValidator = require("../validator/Device");
 
-routes.post("/", deviceController.create);
-routes.get("/", deviceController.getById);
+routes.post("/", deviceValidator.createOrUpdate, deviceController.create);
 routes.get("/all", deviceController.getAll);
-routes.patch("/", deviceController.update);
-routes.delete("/", deviceController.delete);
+routes.get("/:id", deviceController.getById);
+routes.get("/gateway/:id", deviceController.getByGatewayId);
+routes.put("/:id", deviceValidator.createOrUpdate, deviceController.update);
+routes.delete("/:id", deviceController.delete);
 
 module.exports = routes;
